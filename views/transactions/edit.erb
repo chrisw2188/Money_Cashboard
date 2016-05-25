@@ -1,0 +1,47 @@
+<div><h2>Edit a Transaction</h2></div>
+
+<form action = "/transactions/<%= @transaction.id %>" method = "post">
+<input type="hidden" name="_method" value="put">
+
+<label for = "debit_credit">Debit Or Credit</label>
+<select name = "debit_credit" value = "<%= @transaction.debit_credit %>">
+  <option value = <%= "Credit" %>
+  <%= 'selected' if @transaction.debit_credit == "Credit" %> >Credit</option>
+  <option value = <%= "Debit" %>
+  <%= 'selected' if @transaction.debit_credit == "Debit" %> >Debit</option>
+</select>
+
+<label for="type_id">Type</label>
+<select name = "type_id" value = "<%= @transaction.type_id %>">
+  <% @types.each do |type| %>
+  <option value = "<%= type.id  %>" <%= 'selected' if @transaction.type_id == type.id %>><%= type.type %></option>
+  <% end %>
+</select>
+
+<label for="compnay_id">Company</label>
+<select name = "company_id" value = "<%= @transaction.company_id %>">
+  <% @companies.each do |company| %>
+  <option value = "<%= company.id  %>" 
+  <%= 'selected' if @transaction.type_id == company.id %>><%= company.company %>
+  </option>
+  <% end %>
+</select>
+
+<label for = "amount" >Amount</label>
+<input type="number" name="amount" value = "<%= @transaction.amount %>" >
+
+<label for = "dot" >Date of Transaction</label>
+<input type="date" name="dot" value = "<%= @transaction.dot %>" >
+
+<input type="submit" value = "Amend Transaction">
+
+</form>
+
+<form action = "/transactions/<%= @transaction.id %>" method = "post">
+<input type="hidden" name="_method" value = "delete">
+<input type="submit" value="Delete Transaction">
+
+
+</form>
+
+

@@ -1,0 +1,26 @@
+<div><table>
+
+<tr>
+  <th>Company</th>
+  <th>Edit Company</th>
+  <th>Delete Company</th>
+</tr>
+
+<% @companies.each do |company| %>
+<tr>
+  <td>
+    <%= company.company %>
+  </td>
+  <td><a href="companies/<%=company.id %>/edit">Edit</a></td> 
+  <td><form action = "/companies/<%= company.id %>" method = "post">
+<input type="hidden" name="_method" value = "delete">
+<input type="submit" value="Delete Company"></td>
+</tr>
+
+
+<% end %>
+</table>
+
+<%= erb :'companies/new' %>
+
+</div>

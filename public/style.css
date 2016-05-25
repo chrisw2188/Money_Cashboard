@@ -1,0 +1,95 @@
+body {
+  background-image: url(https://www.clearbooks.co.uk/wp-content/uploads/2014/11/British-banknotes-money-014.jpg);
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+div {
+  background-color: #5c5872;
+  opacity: 0.8;
+  color: white;
+  margin: 30px 0;
+}
+
+form {
+  padding: 20px 0;
+}
+
+th {
+    height: 50px;
+}
+
+td {
+  height: 50px;
+  border-radius: 50%;
+}
+
+table, th, td {
+   border: 1px solid white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#5c5872;
+}
+
+nav {
+ width: 100%;
+ float: center;
+ margin-bottom: 20px;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #4c7472;
+}
+
+table {
+  background-color: #4c7472;
+  opacity: 0.8;
+}
+
+.mini-table  {
+  width: 25%;
+  align: right;
+  
+}
+
+
+
+.debit {
+  color: firebrick;
+}
+
+th {
+  text-align: left
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 300px;
+      height: 50px;
+   background:#4c7472;
+   color: white;
+}

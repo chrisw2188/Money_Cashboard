@@ -1,0 +1,28 @@
+<div><h2>All Types</h2>
+
+<table>
+
+<tr>
+  <th>Type</th>
+  <th>Edit Type</th>
+  <th>Delete Type</th>
+</tr>
+
+<% @types.each do |type| %>
+<tr>
+  <td>
+    <%= type.type %>
+  </td>
+    <td><a href="types/<%=type.id %>/edit">Edit</a></td> 
+    <td><form action = "types/<%= type.id %>" method="post">
+  <input type="hidden" name="_method" value = "delete">
+  <input type="submit" value="Delete Type"></form></td>
+</tr>
+
+
+<% end %>
+</table>
+
+<%= erb :'types/new' %>
+
+</div>

@@ -1,0 +1,38 @@
+<div><h2>Add a transaction</h2>
+
+<form action="/transactions" method= "post">
+  
+<label for = "debit_credit">Debit or  Credit</label>
+<select name = "debit_credit">
+<option value = "Debit">Debit</option>
+<option value = "Credit">Credit</option>
+</select>
+
+<label for="type_id">Type</label>
+<select name = "type_id">
+<% @types.each do |type| %>
+  <option value = "<%= type.id %>" ><%= type.type %></option>
+<% end %>
+</select>
+
+<label for="company_id">Company</label>
+<select name = "company_id">
+<% @companies.each do |company| %>
+  <option value = "<%= company.id %>" ><%= company.company %></option>
+<% end %>
+</select>
+
+<label for = "amount" >Amount</label>
+<input type="number" name="amount">
+
+<label for = "dot" >Date of Transaction</label>
+<input type="date" name="dot">
+
+<input type="submit" value = "Add Transaction">
+
+</form>
+
+<%= erb :'types/new' %>
+<%= erb :'companies/new' %>
+
+<h2>Last transaction</h2><%= erb :'transactions/create' %></div>

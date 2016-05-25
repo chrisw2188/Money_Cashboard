@@ -1,0 +1,16 @@
+<table>
+<tr>
+  <th>Debit or Credit</th>
+  <th>Type</th> 
+  <th>Company</th>
+  <th>Amount</th>
+  <th>Date</th>
+</tr>
+<tr>
+<td><%= @transaction.debit_credit %></td>
+<td><%= @transaction.type.type %></td>
+<td><%= @transaction.company.company %></td>  
+<td><%= @transaction.amount %></td>
+<td><%= @transaction.dot.strftime(" %b %d, %Y ") %></td>
+</tr>
+</table>

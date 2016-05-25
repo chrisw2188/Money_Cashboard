@@ -1,0 +1,38 @@
+<div>
+<h2>All Transactions</h2>
+</div>
+
+<table>
+  <tr>
+    <th>Debit or Credit</th>
+    <th>Type</th> 
+    <th>Company</th>
+    <th>Amount</th>
+    <th>Date</th>
+    <th>Edit Transaction</th>
+    <th>Delete Transaction</th>
+  </tr>
+
+<% @transactions.each do |transaction| %>
+
+
+
+<tr class = "<%= 'debit' if transaction.debit_credit == 'Debit' %>">
+<td><%= transaction.debit_credit %></td>
+<td><%= transaction.type.type %></td>
+<td><%= transaction.company.company %></td>
+<td>£<%= transaction.amount %>.00</td>
+<td><%= transaction.dot.strftime(" %b %d, %Y ") %></td>
+
+<td><a href="/transactions/<%=transaction.id%>/edit">Edit</a></td>
+<td>
+<form action = "/transactions/<%= transaction.id %>" method = "post">
+<input type="hidden" name="_method" value = "delete">
+<input type="submit" value="Delete Transaction">
+</form>
+</td>
+</tr>
+ 
+<% end %>
+</table>
+

@@ -1,0 +1,5 @@
+require 'sinatra'
+require_relative 'controllers/transactions_controller'
+require_relative 'controllers/types_controller'
+require_relative 'controllers/companies_controller'
+require_relative 'controllers/cashboard_controller'
